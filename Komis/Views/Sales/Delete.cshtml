@@ -1,0 +1,39 @@
+﻿@model Komis.Models.Sale
+
+@{
+    ViewData["Title"] = "Usuń transakcję";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Czy jesteś pewien, że chcesz usunąć tę transakcję?</h3>
+<div>
+    <h4>Transakcja</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Klient
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customer.FirstName) @Html.DisplayFor(model => model.Customer.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            Samochód
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Make) @Html.DisplayFor(model => model.Car.Model)
+        </dd>
+        <dt class="col-sm-2">
+            Data sprzedaży
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateSold)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Usuń</button>
+        <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Strona Główna";
+}
+
+<div class="py-5 text-center">
+    <h2 class="display-4">Witaj w Mojej Aplikacji Komisowej</h2>
+    <p class="lead">Wybierz jedną z opcji poniżej, aby zarządzać aplikacją.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Samochody</h5>
+                <p class="card-text">Przeglądaj, dodawaj, edytuj i usuwaj samochody z bazy danych.</p>
+                <a href="@Url.Action("Index", "Cars")" class="btn btn-primary">Zarządzaj samochodami</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Klienci</h5>
+                <p class="card-text">Zarządzaj listą klientów, ich danymi i historią zakupów.</p>
+                <a href="@Url.Action("Index", "Customers")" class="btn btn-secondary">Zarządzaj klientami</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Sprzedaże</h5>
+                <p class="card-text">Monitoruj transakcje sprzedaży, przeglądaj historię i generuj raporty.</p>
+                <a href="@Url.Action("Index", "Sales")" class="btn btn-success">Zarządzaj sprzedażami</a>
+            </div>
+        </div>
+    </div>
+</div>

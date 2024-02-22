@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Komis.Models.Customer>
+
+@{
+    ViewData["Title"] = "Lista klientów";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Dodaj nowego klienta</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id=item.Id })" class="btn btn-success">Edytuj</a>
+                    <a href="@Url.Action("Details", new { id=item.Id })" class="btn btn-info">Szczegóły</a>
+                    <a href="@Url.Action("Delete", new { id=item.Id })" class="btn btn-danger">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
